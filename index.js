@@ -5,6 +5,8 @@ const express = require('express');
 // Initialize the app object
 const app = express();
 
+app.use('/places', require('controllers/places'));
+
 // Create a homepage route
 app.get('/', (req, res) => {
   res.send('Whatever you want to say');
