@@ -5,16 +5,19 @@ const express = require('express');
 // Initialize the app object
 const app = express();
 
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
 app.use('/places', require('controllers/places'));
 
 // Create a homepage route
 app.get('/', (req, res) => {
-  res.send('Whatever you want to say');
+  res.render('home');
 });
 
 // Create a wildcard route
 app.get('*', (req, res) => {
-  res.status(404).send('<h1>404 Page</h1>');
+  res.status(404).render('error404');
 });
 
 // Listen for connections
