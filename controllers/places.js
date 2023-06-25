@@ -6,13 +6,13 @@ router.get('/', (req, res) => {
     city: 'Las Vegas',
     state: 'NV',
     cuisines: 'Thai, Pan-Asian',
-    pic: 'http://placekitten.com/250/250'
+    pic: '/images/table-in-restaurant.jpg'
   }, {
     name: 'Coding Cat Cafe',
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
-    pic: 'http://placekitten.com/250/250'
+    pic: '/images/coffee-cat.jpg'
   }];
   res.render('places/index', { places });
 });
