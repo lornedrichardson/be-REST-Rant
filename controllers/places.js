@@ -17,11 +17,7 @@ router.get('/', (req, res) => {
   res.render('places/index', { places });
 });
 
-router.get('/new', (req, res) => {
-  res.render('places/new');
-});
-
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   let places = [{
     name: 'H-Thai-ML',
     city: 'Las Vegas',
@@ -36,6 +32,14 @@ router.get('/', (req, res) => {
     pic: '/images/coffee-cat.jpg'
   }];
   res.render('places/index', { places });
+});
+
+router.get('/new', (req, res) => {
+  res.render('places/new');
+});
+
+router.get('/:id', (req, res) => {
+  res.render('places/${req.params.id}');
 });
 
 module.exports = router;
